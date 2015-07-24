@@ -19,6 +19,16 @@
   "bugs": {
     "url": "https://github.com/rexxars/3things-web/issues"
   },
+  "eslintConfig": {
+    "extends": "vaffel/react",
+    "parser": "babel-eslint",
+    "env": {
+      "es6": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
   "homepage": "https://github.com/rexxars/3things-web#readme",
   "devDependencies": {
     "babel-core": "^5.8.3",
@@ -31,16 +41,6 @@
     "react-hot-loader": "^1.2.8",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1"
-  },
-  "eslintConfig": {
-    "extends": "vaffel/react",
-    "parser": "babel-eslint",
-    "env": {
-      "es6": true
-    },
-    "ecmaFeatures": {
-      "modules": true
-    }
   },
   "dependencies": {
     "classnames": "^2.1.3",
