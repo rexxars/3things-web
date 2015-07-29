@@ -42,7 +42,7 @@ module.exports = {
         loaders: [{
             test: /\.jsx?$/,
             loaders: isProd ? ['babel'] : ['react-hot', 'babel'],
-            include: path.join(__dirname, 'js'),
+            include: path.join(__dirname, 'app'),
             exclude: /node_modules/
         }]
     }
