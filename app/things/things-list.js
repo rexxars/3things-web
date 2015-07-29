@@ -28,7 +28,7 @@ class ThingsList extends React.Component {
         const dates = Object.keys(this.props.things);
 
         return (
-            <ul className="things-list">
+            <ul className="timeline">
                 {dates.map(date =>
                     <DayView
                         key={date}

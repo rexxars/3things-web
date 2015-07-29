@@ -1,8 +1,74 @@
 @import '_pure';
 
+body {
+    background: #ecf0f1;
+}
+
 #layout {
     padding: 0 10px;
     font-size: 1.5em;
+}
+
+.timeline {
+    list-style-type: none;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        background: #2ecc71;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .day-view {
+        position: relative;
+        margin: 2em 0;
+        padding-left: 35px;
+
+        h3 {
+            margin: 0;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 40px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #2ecc71;
+            margin-left: -48px;
+            box-shadow: 0 0 0 4px #FFF, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        ol:before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 15px;
+            height: 0;
+            width: 0;
+            border: 10px solid rgba(0, 0, 0, 0);
+            border-right: 10px solid #FFF;
+        }
+
+        ol {
+            list-style-type: none;
+            background: #fff;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        li {
+        }
+    }
 }
 
 header {
@@ -13,8 +79,4 @@ header {
         width: 140px;
         height: 70px;
     }
-}
-
-.things-list {
-    
 }
