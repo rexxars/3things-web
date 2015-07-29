@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
+import groupBy from 'lodash.groupby';
 import { connect } from 'react-redux';
-import ThingInput from './thing-input';
 import { getThingsSinceDate, createThing } from '../actions/thing-actions';
+import DayView from './day-view';
 
-@connect(state => ({ things: state.things }))
+@connect(state => ({ things: groupBy(state.things, 'date') }))
 class ThingsList extends React.Component {
     static propTypes = {
         things: PropTypes.array,
@@ -24,14 +25,17 @@ class ThingsList extends React.Component {
     }
 
     render() {
+        const dates = Object.keys(this.props.things);
+
         return (
             <ul className="things-list">
-                {this.props.things.map(thing =>
-                    <li key={thing.id}>{thing.description}</li>
+                {dates.map(date =>
+                    <DayView
+                        things={this.props.things[date]}
+                        date={date}
+                        onSave={this.onSave}
+                    />
                 )}
-                <li key="new-thing">
-                    <ThingInput onSave={this.onSave} />
-                </li>
             </ul>
         );
     }
