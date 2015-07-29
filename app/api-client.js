@@ -22,7 +22,6 @@ function request(url, opts, callback) {
 
     xhr(merge({
         uri: apiUrl + url,
-        json: true,
-        useXDR: true
+        json: true
     }, opts), callback);
 }

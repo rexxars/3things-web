@@ -8,7 +8,8 @@ var sharedPlugins = [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
         'process.env': {
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+            API_URL: JSON.stringify(isProd ? '/api' : 'http://localhost:3000/api')
         }
     }),
     new webpack.NoErrorsPlugin()
