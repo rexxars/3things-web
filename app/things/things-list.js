@@ -7,7 +7,7 @@ import DayView from './day-view';
 @connect(state => ({ things: groupBy(state.things, 'date') }))
 class ThingsList extends React.Component {
     static propTypes = {
-        things: PropTypes.array,
+        things: PropTypes.object,
         dispatch: PropTypes.func
     }
 
@@ -31,6 +31,7 @@ class ThingsList extends React.Component {
             <ul className="things-list">
                 {dates.map(date =>
                     <DayView
+                        key={date}
                         things={this.props.things[date]}
                         date={date}
                         onSave={this.onSave}
